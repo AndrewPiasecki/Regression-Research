@@ -1,0 +1,51 @@
+---
+title: "Non-official Research"
+output: html_notebook
+---
+
+>
+>
+>
+
+# Libraries and Installations
+
+
+- install.packages("ggplot2")
+- install.packages("ggpubr") 
+- install.packages("dplyr")
+
+
+```{r}
+
+
+library(readxl)
+library(ggplot2)
+library(ggpubr)
+
+
+
+```
+
+
+
+# Data from `Excel`
+
+You must change the directories that it it referring to or it won't work
+
+```{r}
+table_1 <- read_excel("OneDrive/Documents/R/Research/RegressionData.xlsx", sheet = 'Sheet1', col_names = c("x", "y"))
+table_2 <- read_excel("R/Research/RegressionData.xlsx", sheet = 'Sheet2', col_names = c("x", "y"))
+table_3 <- read_excel("R/Research/RegressionData.xlsx", sheet = 'Sheet3', col_names = c("x", "y"))
+table_4 <- read_excel("R/Research/RegressionData.xlsx", sheet = 'Sheet4', col_names = c("x", "y"))
+table_5 <- read_excel("R/Research/RegressionData.xlsx", sheet = 'Sheet5', col_names = c("x", "y"))
+table_6 <- read_excel("R/Research/RegressionData.xlsx", sheet = 'Sheet6', col_names = c("x", "y"))
+table_7 <- read_excel("R/Research/RegressionData.xlsx", sheet = 'Sheet7', col_names = c("x", "y"))
+table_8 <- read_excel("R/Research/RegressionData.xlsx", sheet = 'Sheet8', col_names = c("x", "y"))
+table_9 <- read_excel("R/Research/RegressionData.xlsx", sheet = 'Sheet9', col_names = c("x1", "x2", "x3", "x4", "y"))
+table_10 <- read_excel("R/Research/RegressionData.xlsx", sheet = 'Sheet10', col_names = c("x1", "x2", "x3", "x4", "y"))
+
+
+
+```
+
+
