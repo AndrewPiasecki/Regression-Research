@@ -45,8 +45,8 @@ table_5 <- read.table("https://raw.githubusercontent.com/AndrewPiasecki/Regressi
 table_6 <- read.table("https://raw.githubusercontent.com/AndrewPiasecki/Regression-Research/main/Data%20Texts/Sheet6.txt", header = TRUE, col.names = c("x", "y"))
 table_7 <- read.table("https://raw.githubusercontent.com/AndrewPiasecki/Regression-Research/main/Data%20Texts/Sheet7.txt", header = TRUE, col.names = c("x", "y"))
 table_8 <- read.table("https://raw.githubusercontent.com/AndrewPiasecki/Regression-Research/main/Data%20Texts/Sheet8.txt", header = TRUE, col.names = c("x", "y"))
-#table_9 <- read.table("https://raw.githubusercontent.com/AndrewPiasecki/Regression-Research/main/Data%20Texts/Sheet9.txt", header = TRUE, col.names = c("x", "y"))
-#table_10 <- read.table("https://raw.githubusercontent.com/AndrewPiasecki/Regression-Research/main/Data%20Texts/Sheet10.txt", header = TRUE, col.names = c("x", "y"))
+table_9 <- read.table("https://raw.githubusercontent.com/AndrewPiasecki/Regression-Research/main/Data%20Texts/Sheet9.txt", header = TRUE, col.names = c("y", "x1", "x2", "x3", "x4"))
+table_10 <- read.table("https://raw.githubusercontent.com/AndrewPiasecki/Regression-Research/main/Data%20Texts/Sheet10.txt", header = TRUE, col.names = c("y", "x1", "x2", "x3", "x4"))
 
 
 
@@ -57,7 +57,8 @@ table_8 <- read.table("https://raw.githubusercontent.com/AndrewPiasecki/Regressi
 
 t1 <- ggplot((data = table_1), aes(x = x, y = y)) + 
   geom_point() +
-  stat_smooth(method = "lm", col = "yellow")
+  stat_smooth(method = "lm", col = "yellow") + 
+  ggtitle("Sheet 1")
 t1 
 
 x1 <- table_1$y + table_1$x
@@ -71,7 +72,8 @@ summary(fit1)
 
 t2 <- ggplot((data = table_2), aes(x = x, y = y)) + 
   geom_point() +
-  stat_smooth(method = "lm", col = "yellow")
+  stat_smooth(method = "lm", col = "yellow") + 
+  ggtitle("Sheet 2")
 t2 
 
 x2 <- table_2$y + table_2$x
@@ -86,7 +88,8 @@ summary(fit2)
 
 t3 <- ggplot((data = table_3), aes(x = x, y = y)) + 
   geom_point() +
-  stat_smooth(method = "lm",col = "yellow")
+  stat_smooth(method = "lm",col = "yellow") + 
+  ggtitle("Sheet 3")
 t3 
 
 x3 <- table_3$y + table_3$x
@@ -101,7 +104,8 @@ summary(fit3)
 
 t4 <- ggplot((data = table_4), aes(x = x, y = y)) + 
   geom_point() +
-  stat_smooth(method = "lm",col = "yellow")
+  stat_smooth(method = "lm",col = "yellow") + 
+  ggtitle("Sheet 4")
 t4 
 
 x4 <- table_4$y + table_4$x
@@ -116,7 +120,8 @@ summary(fit4)
 
 t5 <- ggplot((data = table_5), aes(x = x, y = y)) + 
   geom_point() +
-  stat_smooth(method = "lm", col = "yellow")
+  stat_smooth(method = "lm", col = "yellow") + 
+  ggtitle("Sheet 5")
 t5 
 
 x5 <- table_5$y + table_5$x
@@ -131,7 +136,8 @@ summary(fit5)
 
 t6 <- ggplot((data = table_6), aes(x = x, y = y)) + 
   geom_point() +
-  stat_smooth(method = "lm", formula = y ~ x + I(x^2), col = "yellow")
+  stat_smooth(method = "lm", formula = y ~ x + I(x^2), col = "yellow") + 
+  ggtitle("Sheet 6")
 t6 
 
 x6 <- table_6$y + (I(table_6$x)^2)
@@ -145,7 +151,8 @@ summary(fit6)
 
 t7 <- ggplot((data = table_7), aes(x = x, y = y)) + 
   geom_point() +
-  stat_smooth(method = "lm", col = "yellow")
+  stat_smooth(method = "lm", col = "yellow") + 
+  ggtitle("Sheet 7")
 t7 
 
 
@@ -157,7 +164,8 @@ t7
 
 t8 <- ggplot((data = table_8), aes(x = x, y = y)) + 
   geom_point() +
-  stat_smooth(method = "lm", col = "yellow")
+  stat_smooth(method = "lm", col = "yellow") + 
+  ggtitle("Sheet 8")
 t8 
 
 
@@ -167,44 +175,43 @@ t8
 # ## Sheet 9
 # 
 # 
-# B1 <- 1
-# C1 <- 1
-# D1 <- 1
-# E1 <- 1
+ B1 <- 1
+ C1 <- 1
+ D1 <- 1
+ E1 <- 1
 # 
 # 
 # ## Linear Regression
 # 
-# t9 <- ggplot((data = table_9), aes(x = y + (x1*B1) + (x2*C1) + (x3*D1) + (x4*E1), y = y)) + 
-#   geom_point() +
-#   stat_smooth(method = "lm", col = "yellow")
-# t9 
+ t9 <- ggplot((data = table_9), aes(x = y + (x1*B1) + (x2*C1) + (x3*D1) + (x4*E1), y = y)) + 
+   geom_point() +
+   stat_smooth(method = "lm", col = "yellow") + 
+  ggtitle("Sheet 9")
+ t9 
 # 
 # 
-# x9 <- (table_9$x1 * B1) + (table_9$x2 * C1) + (table_9$x3 * D1) + (table_9$x4 * E1)  
-# fit9 <- lm(y ~ x9, data = table_9)
-# summary(fit9)
+
 # 
 # 
 # ## Sheet 10
 # 
 # 
-# B2 <- 1
-# C2 <- 1
-# D2 <- 1
-# E2 <- 1
+ B2 <- 1
+ C2 <- 1
+ D2 <- 1
+ E2 <- 1
 # 
 # 
 # ## Linear Regression
-# t10 <- ggplot((data = table_10), aes(x = y + (x1*B2) + (x2*C2) + (x3*D2) + (x4*E2), y = y)) + 
-#   geom_point() +
-#   stat_smooth(method = "lm", col = "yellow")
-# t10 
+ t10 <- ggplot((data = table_10), aes(x = y + (x1*B2) + (x2*C2) + (x3*D2) + (x4*E2), y = y)) + 
+   geom_point() +
+   stat_smooth(method = "lm", col = "yellow") + 
+  ggtitle("Sheet 10")
+t10
+ 
 # 
 # 
-# x10 <- (table_10$x1 * B2) + (table_10$x2 * C2) + (table_10$x3 * D2) + (table_10$x4 * E2)  
-# fit10 <- lm(y ~ x10, data = table_10)
-# summary(fit10)
+
 
 ## Ctrl + Shift + C to uncomment
 ```
